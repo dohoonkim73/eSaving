@@ -16,9 +16,58 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet("background-color: #E0E5EC;")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(30, 90, 75, 24))
-        self.pushButton.setObjectName("pushButton")
+        self.lbl_connect = QtWidgets.QLabel(parent=self.centralwidget)
+        self.lbl_connect.setGeometry(QtCore.QRect(50, 80, 21, 21))
+        self.lbl_connect.setStyleSheet("QLabel {\n"
+"/* 원형 만들기: 너비의 절반*/\n"
+"border-radius: 10px;\n"
+"\n"
+"/*입체감을 위한 그라데이션*/\n"
+"background-color: qradialgradient(\n"
+"    cx: 0.5, cy: 0.5, radius: 0.8,\n"
+"    fx: 0.4, fy:0.4,\n"
+"    stop: 0 #f0f0f0,    /* 중심부: 밝은 연두 */\n"
+"    stop: 0.5 #888888,  /* 중간 선명한 초록 */\n"
+"    stop: 1.0 #444444  /* 테두리 어두운 초록 */\n"
+");\n"
+"\n"
+"/* 미세한 테두리로 선명함 추가 */\n"
+"border: 1px solid #333333;\n"
+"}")
+        self.lbl_connect.setText("")
+        self.lbl_connect.setObjectName("lbl_connect")
+        self.btn_connect = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btn_connect.setGeometry(QtCore.QRect(20, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_connect.setFont(font)
+        self.btn_connect.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_connect.setObjectName("btn_connect")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
@@ -34,4 +83,4 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "PushButton"))
+        self.btn_connect.setText(_translate("MainWindow", "Connection"))
