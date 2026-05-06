@@ -8,7 +8,7 @@ class PlcWorker(QObject):
     finished = pyqtSignal()
     progress = pyqtSignal()
     
-    def __init__(self, plc_service):
+    def __init__(self, plc_service:PlcService):
         super().__init__()
         self.plc_service = plc_service
         self._running = False
@@ -19,6 +19,20 @@ class PlcWorker(QObject):
         
         while self._running:
             try:
+                # 상태정보 읽어오기
+                eqpState = self.plc_service.plc.batchread_wordunits(headdevice="D100", readsize=2)
+                
+                # IT 인터페이스 관련 데이터 읽어오기
+                read_B300E = self.plc_service.plc.batchread_bitunits(headdevice="B300E", readsize=1)
+                read_W300E = self.plc_service.plc.batchread_wordunits(headdevice="W300E", readsize=1)
+                read_B400E = self.plc_service.plc.batchread_bitunits(headdevice="B400E", readsize=1)
+                read_W400E = self.plc_service.plc.batchread_wordunits(headdevice="W400E", readsize=1)
+                
+                read_ITinterface = read_B300E + read_B400E
+                
+                if read_B400E[0] == True:
+                    self.handle_command(read_B400E, read_W400E)
+                    
                 print(" Polling 진행중 ")
                 
             except Exception as e:
@@ -30,6 +44,13 @@ class PlcWorker(QObject):
         
     def stop(self):
         self._running = False
+        
+    def handle_command(self, cmdFlag, cmdCode):
+        self.plc_service.write_bitAddress("B300E", False)
+        
+        time.sleep(0.5)
+        
+        self.plc_service.write_wordAddress("W300E", 0)
         
     
 

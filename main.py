@@ -1,3 +1,10 @@
+""" gitHub """
+""" 1. git status로 상태 확인 """
+""" 2. git add . 파일 추가 """
+""" 3. git commit -m " 내용 기입 " """
+""" 4. git push -u  origin main """
+""" 5. gitHub repository에 제대로 저장되었는지 확인 """
+
 import sys
 
 from PyQt6.QtWidgets import QApplication

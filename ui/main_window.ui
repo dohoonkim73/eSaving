@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>978</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -94,13 +94,1022 @@ background-color: #e0e0e0;
      <string>Connection</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox_7">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>201</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-weight: bold;
+    border: 2px solid #bdc3c7; /* 테두리 색상 */
+    border-radius: 8px; /* 둥근 모서리 */
+    margin-top: 15px; /* 타이틀 공간 확보 */
+    background-color: #E0E5EC; /* 배경색 */
+    padding: 10px;
+    border-top: 2px solid #B0B9C6;
+    border-left: 2px solid #B0B9C6;
+  
+    
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* 타이틀 위치 */
+    padding: 0 5px;
+    color: #2c3e50; /* 타이틀 글자 색상 */
+}</string>
+    </property>
+    <property name="title">
+     <string>Polling</string>
+    </property>
+    <widget class="QPushButton" name="btn_start_polling">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>84</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>D2Coding</family>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */
+border-radius: 12px;
+border: none;
+
+/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */
+border-top: 2px solid #ffffff;
+border-left: 2px solid #ffffff;
+border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/
+border-bottom: 2px solid #bebebe;
+
+color: #606060;
+padding: 10px;
+}
+
+QPushButton:pressed {
+/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 '파인'느낌 생성*/
+border-top: 2px solid #bebebe;
+border-left: 2px solid #bebebe;
+border-right: 2px solid #ffffff;
+border-bottom: 2px solid #ffffff;
+background-color: #e0e0e0;  
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_stop_polling">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>84</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>D2Coding</family>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */
+border-radius: 12px;
+border: none;
+
+/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */
+border-top: 2px solid #ffffff;
+border-left: 2px solid #ffffff;
+border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/
+border-bottom: 2px solid #bebebe;
+
+color: #606060;
+padding: 10px;
+}
+
+QPushButton:pressed {
+/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 '파인'느낌 생성*/
+border-top: 2px solid #bebebe;
+border-left: 2px solid #bebebe;
+border-right: 2px solid #ffffff;
+border-bottom: 2px solid #ffffff;
+background-color: #e0e0e0;  
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Stop</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>301</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>D2Coding</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-weight: bold;
+    border: 2px solid #bdc3c7; /* 테두리 색상 */
+    border-radius: 8px; /* 둥근 모서리 */
+    margin-top: 15px; /* 타이틀 공간 확보 */
+    background-color: #E0E5EC; /* 배경색 */
+    padding: 10px;
+    border-top: 2px solid #B0B9C6;
+    border-left: 2px solid #B0B9C6;
+  
+    
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* 타이틀 위치 */
+    padding: 0 5px;
+    color: #2c3e50; /* 타이틀 글자 색상 */
+}</string>
+    </property>
+    <property name="title">
+     <string>Mode execute</string>
+    </property>
+    <widget class="QPushButton" name="btn_eSaving">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>84</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>D2Coding</family>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */
+border-radius: 12px;
+border: none;
+
+/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */
+border-top: 2px solid #ffffff;
+border-left: 2px solid #ffffff;
+border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/
+border-bottom: 2px solid #bebebe;
+
+color: #606060;
+padding: 10px;
+}
+
+QPushButton:pressed {
+/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 '파인'느낌 생성*/
+border-top: 2px solid #bebebe;
+border-left: 2px solid #bebebe;
+border-right: 2px solid #ffffff;
+border-bottom: 2px solid #ffffff;
+background-color: #e0e0e0;  
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_shutDown">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>30</y>
+       <width>84</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>D2Coding</family>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */
+border-radius: 12px;
+border: none;
+
+/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */
+border-top: 2px solid #ffffff;
+border-left: 2px solid #ffffff;
+border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/
+border-bottom: 2px solid #bebebe;
+
+color: #606060;
+padding: 10px;
+}
+
+QPushButton:pressed {
+/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 '파인'느낌 생성*/
+border-top: 2px solid #bebebe;
+border-left: 2px solid #bebebe;
+border-right: 2px solid #ffffff;
+border-bottom: 2px solid #ffffff;
+background-color: #e0e0e0;  
+
+}</string>
+     </property>
+     <property name="text">
+      <string>ShutDown</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_release">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>30</y>
+       <width>84</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>D2Coding</family>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */
+border-radius: 12px;
+border: none;
+
+/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */
+border-top: 2px solid #ffffff;
+border-left: 2px solid #ffffff;
+border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/
+border-bottom: 2px solid #bebebe;
+
+color: #606060;
+padding: 10px;
+}
+
+QPushButton:pressed {
+/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 '파인'느낌 생성*/
+border-top: 2px solid #bebebe;
+border-left: 2px solid #bebebe;
+border-right: 2px solid #ffffff;
+border-bottom: 2px solid #ffffff;
+background-color: #e0e0e0;  
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Releasd</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_10">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>211</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>D2Coding</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-weight: bold;
+    border: 2px solid #bdc3c7; /* 테두리 색상 */
+    border-radius: 8px; /* 둥근 모서리 */
+    margin-top: 15px; /* 타이틀 공간 확보 */
+    background-color: #E0E5EC; /* 배경색 */
+    padding: 10px;
+    border-top: 2px solid #B0B9C6;
+    border-left: 2px solid #B0B9C6;
+  
+    
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* 타이틀 위치 */
+    padding: 0 5px;
+    color: #2c3e50; /* 타이틀 글자 색상 */
+}</string>
+    </property>
+    <property name="title">
+     <string>Operation switch</string>
+    </property>
+    <widget class="QPushButton" name="btn_UserStop">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>84</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>D2Coding</family>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */
+border-radius: 12px;
+border: none;
+
+/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */
+border-top: 2px solid #ffffff;
+border-left: 2px solid #ffffff;
+border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/
+border-bottom: 2px solid #bebebe;
+
+color: #606060;
+padding: 10px;
+}
+
+QPushButton:pressed {
+/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 '파인'느낌 생성*/
+border-top: 2px solid #bebebe;
+border-left: 2px solid #bebebe;
+border-right: 2px solid #ffffff;
+border-bottom: 2px solid #ffffff;
+background-color: #e0e0e0;  
+
+}</string>
+     </property>
+     <property name="text">
+      <string>User stop</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_VacOn">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>30</y>
+       <width>84</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>D2Coding</family>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */
+border-radius: 12px;
+border: none;
+
+/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */
+border-top: 2px solid #ffffff;
+border-left: 2px solid #ffffff;
+border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/
+border-bottom: 2px solid #bebebe;
+
+color: #606060;
+padding: 10px;
+}
+
+QPushButton:pressed {
+/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 '파인'느낌 생성*/
+border-top: 2px solid #bebebe;
+border-left: 2px solid #bebebe;
+border-right: 2px solid #ffffff;
+border-bottom: 2px solid #ffffff;
+background-color: #e0e0e0;  
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Vac. On</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_6">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>0</y>
+      <width>191</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-weight: bold;
+    border: 2px solid #bdc3c7; /* 테두리 색상 */
+    border-radius: 8px; /* 둥근 모서리 */
+    margin-top: 15px; /* 타이틀 공간 확보 */
+    background-color: #E0E5EC; /* 배경색 */
+    padding: 10px;
+    border-top: 2px solid #B0B9C6;
+    border-left: 2px solid #B0B9C6;
+  
+    
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* 타이틀 위치 */
+    padding: 0 5px;
+    color: #2c3e50; /* 타이틀 글자 색상 */
+}</string>
+    </property>
+    <property name="title">
+     <string>IT Interface</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>137</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>30</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>W300E</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="lcd_W300E">
+        <property name="styleSheet">
+         <string notr="true">QLCDNumber {
+    background-color: #1a1a1b; /* 깊은 다크 그레이 */
+    border: 2px solid #3e3e42;
+    border-radius: 8px;
+    color: #00ffcc; /* 네온 민트색 (숫자 색상) */
+    padding: 5px;
+}</string>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>137</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>30</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>W400E</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="lcd_W400E">
+        <property name="styleSheet">
+         <string notr="true">QLCDNumber {
+    background-color: #1a1a1b; /* 깊은 다크 그레이 */
+    border: 2px solid #3e3e42;
+    border-radius: 8px;
+    color: #00ffcc; /* 네온 민트색 (숫자 색상) */
+    padding: 5px;
+}</string>
+        </property>
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="spacing">
+       <number>53</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>B300E</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_B300E">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+/* 원형 만들기: 너비의 절반*/
+border-radius: 14px;
+
+/*입체감을 위한 그라데이션*/
+background-color: qradialgradient(
+    cx: 0.5, cy: 0.5, radius: 0.8,
+    fx: 0.4, fy:0.4,
+    stop: 0 #f0f0f0,    /* 중심부: 밝은 연두 */
+    stop: 0.5 #888888,  /* 중간 선명한 초록 */
+    stop: 1.0 #444444  /* 테두리 어두운 초록 */
+);
+
+/* 미세한 테두리로 선명함 추가 */
+border: 1px solid #333333;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>117</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>50</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>B400E</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_B400E">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+/* 원형 만들기: 너비의 절반*/
+border-radius: 14px;
+
+/*입체감을 위한 그라데이션*/
+background-color: qradialgradient(
+    cx: 0.5, cy: 0.5, radius: 0.8,
+    fx: 0.4, fy:0.4,
+    stop: 0 #f0f0f0,    /* 중심부: 밝은 연두 */
+    stop: 0.5 #888888,  /* 중간 선명한 초록 */
+    stop: 1.0 #444444  /* 테두리 어두운 초록 */
+);
+
+/* 미세한 테두리로 선명함 추가 */
+border: 1px solid #333333;
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_11">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>330</y>
+      <width>141</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-weight: bold;
+    border: 2px solid #bdc3c7; /* 테두리 색상 */
+    border-radius: 8px; /* 둥근 모서리 */
+    margin-top: 15px; /* 타이틀 공간 확보 */
+    background-color: #E0E5EC; /* 배경색 */
+    padding: 10px;
+    border-top: 2px solid #B0B9C6;
+    border-left: 2px solid #B0B9C6;
+  
+    
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* 타이틀 위치 */
+    padding: 0 5px;
+    color: #2c3e50; /* 타이틀 글자 색상 */
+}</string>
+    </property>
+    <property name="title">
+     <string>E-Saving State</string>
+    </property>
+    <widget class="QRadioButton" name="rBtn_eSave_None">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Disable</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rBtn_eSave_wait">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enable</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rBtn_eSave_saveMode">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>101</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save Mode</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rBtn_eSave_shutDown">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Shut Down Mode</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_9">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>330</y>
+      <width>131</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-weight: bold;
+    border: 2px solid #bdc3c7; /* 테두리 색상 */
+    border-radius: 8px; /* 둥근 모서리 */
+    margin-top: 15px; /* 타이틀 공간 확보 */
+    background-color: #E0E5EC; /* 배경색 */
+    padding: 10px;
+    border-top: 2px solid #B0B9C6;
+    border-left: 2px solid #B0B9C6;
+  
+    
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* 타이틀 위치 */
+    padding: 0 5px;
+    color: #2c3e50; /* 타이틀 글자 색상 */
+}</string>
+    </property>
+    <property name="title">
+     <string>LD to DGS Interface</string>
+    </property>
+    <widget class="QRadioButton" name="rBtn_IF_LD_deployReq">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Deploy Req.</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rBtn_IF_LD_wait">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Wait</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>131</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+    font-weight: bold;
+    border: 2px solid #bdc3c7; /* 테두리 색상 */
+    border-radius: 8px; /* 둥근 모서리 */
+    margin-top: 15px; /* 타이틀 공간 확보 */
+    background-color: #E0E5EC; /* 배경색 */
+    padding: 10px;
+    border-top: 2px solid #B0B9C6;
+    border-left: 2px solid #B0B9C6;
+  
+    
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* 타이틀 위치 */
+    padding: 0 5px;
+    color: #2c3e50; /* 타이틀 글자 색상 */
+}</string>
+    </property>
+    <property name="title">
+     <string>EQP State setting</string>
+    </property>
+    <widget class="QRadioButton" name="rBtn_state_run">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Run</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rBtn_state_wait">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Wait</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rBtn_state_userStop">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>User stop</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rBtn_state_trouble">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Trouble</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="lbl_EqpState">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>510</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+   background-color: #1a1a1b; /* 깊은 다크 그레이 */
+    border: 2px solid #3e3e42;
+    border-radius: 1px;
+    color: #00ffcc; /* 네온 민트색 (숫자 색상) */
+    padding: 5px;
+    
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_eSaveState">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>550</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+   background-color: #1a1a1b; /* 깊은 다크 그레이 */
+    border: 2px solid #3e3e42;
+    border-radius: 1px;
+    color: #00ffcc; /* 네온 민트색 (숫자 색상) */
+    padding: 5px;
+    
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="text_event_log">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>20</y>
+      <width>391</width>
+      <height>261</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_eventLog_clear">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>290</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); 
+color: #444444;
+border-radius: 4px;
+padding: 8px 16px;
+font-size: 12px;
+border: 1px solid #B0B0B0;
+border-bottom: 2px solid #CFCFCF;
+}
+
+QPushButton:pressed {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #E5E5E5); 
+border-top: 3px solid #A0A0A0;
+border-left: 3px solid #A8A8A8;
+border-right: 3px solid #F0F0F0;
+border-bottom: 3px solid #F8F8F8;
+
+padding-left: 18px;
+padding-top: 11px;
+color: #005A9E;
+}</string>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>978</width>
      <height>22</height>
     </rect>
    </property>

@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(978, 670)
         MainWindow.setStyleSheet("background-color: #E0E5EC;")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -68,9 +68,606 @@ class Ui_MainWindow(object):
 "\n"
 "}")
         self.btn_connect.setObjectName("btn_connect")
+        self.groupBox_7 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_7.setGeometry(QtCore.QRect(130, 20, 201, 81))
+        self.groupBox_7.setStyleSheet("QGroupBox {\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
+"    border-radius: 8px; /* 둥근 모서리 */\n"
+"    margin-top: 15px; /* 타이틀 공간 확보 */\n"
+"    background-color: #E0E5EC; /* 배경색 */\n"
+"    padding: 10px;\n"
+"    border-top: 2px solid #B0B9C6;\n"
+"    border-left: 2px solid #B0B9C6;\n"
+"  \n"
+"    \n"
+"    border-bottom: 2px solid #FFFFFF;\n"
+"    border-right: 2px solid #FFFFFF;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* 타이틀 위치 */\n"
+"    padding: 0 5px;\n"
+"    color: #2c3e50; /* 타이틀 글자 색상 */\n"
+"}")
+        self.groupBox_7.setObjectName("groupBox_7")
+        self.btn_start_polling = QtWidgets.QPushButton(parent=self.groupBox_7)
+        self.btn_start_polling.setGeometry(QtCore.QRect(10, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_start_polling.setFont(font)
+        self.btn_start_polling.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_start_polling.setObjectName("btn_start_polling")
+        self.btn_stop_polling = QtWidgets.QPushButton(parent=self.groupBox_7)
+        self.btn_stop_polling.setGeometry(QtCore.QRect(100, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_stop_polling.setFont(font)
+        self.btn_stop_polling.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_stop_polling.setObjectName("btn_stop_polling")
+        self.groupBox_2 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_2.setGeometry(QtCore.QRect(20, 120, 301, 80))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setPointSize(10)
+        font.setBold(True)
+        self.groupBox_2.setFont(font)
+        self.groupBox_2.setStyleSheet("QGroupBox {\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
+"    border-radius: 8px; /* 둥근 모서리 */\n"
+"    margin-top: 15px; /* 타이틀 공간 확보 */\n"
+"    background-color: #E0E5EC; /* 배경색 */\n"
+"    padding: 10px;\n"
+"    border-top: 2px solid #B0B9C6;\n"
+"    border-left: 2px solid #B0B9C6;\n"
+"  \n"
+"    \n"
+"    border-bottom: 2px solid #FFFFFF;\n"
+"    border-right: 2px solid #FFFFFF;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* 타이틀 위치 */\n"
+"    padding: 0 5px;\n"
+"    color: #2c3e50; /* 타이틀 글자 색상 */\n"
+"}")
+        self.groupBox_2.setObjectName("groupBox_2")
+        self.btn_eSaving = QtWidgets.QPushButton(parent=self.groupBox_2)
+        self.btn_eSaving.setGeometry(QtCore.QRect(10, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_eSaving.setFont(font)
+        self.btn_eSaving.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_eSaving.setObjectName("btn_eSaving")
+        self.btn_shutDown = QtWidgets.QPushButton(parent=self.groupBox_2)
+        self.btn_shutDown.setGeometry(QtCore.QRect(110, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_shutDown.setFont(font)
+        self.btn_shutDown.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_shutDown.setObjectName("btn_shutDown")
+        self.btn_release = QtWidgets.QPushButton(parent=self.groupBox_2)
+        self.btn_release.setGeometry(QtCore.QRect(210, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_release.setFont(font)
+        self.btn_release.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_release.setObjectName("btn_release")
+        self.groupBox_10 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_10.setGeometry(QtCore.QRect(20, 220, 211, 80))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setPointSize(10)
+        font.setBold(True)
+        self.groupBox_10.setFont(font)
+        self.groupBox_10.setStyleSheet("QGroupBox {\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
+"    border-radius: 8px; /* 둥근 모서리 */\n"
+"    margin-top: 15px; /* 타이틀 공간 확보 */\n"
+"    background-color: #E0E5EC; /* 배경색 */\n"
+"    padding: 10px;\n"
+"    border-top: 2px solid #B0B9C6;\n"
+"    border-left: 2px solid #B0B9C6;\n"
+"  \n"
+"    \n"
+"    border-bottom: 2px solid #FFFFFF;\n"
+"    border-right: 2px solid #FFFFFF;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* 타이틀 위치 */\n"
+"    padding: 0 5px;\n"
+"    color: #2c3e50; /* 타이틀 글자 색상 */\n"
+"}")
+        self.groupBox_10.setObjectName("groupBox_10")
+        self.btn_UserStop = QtWidgets.QPushButton(parent=self.groupBox_10)
+        self.btn_UserStop.setGeometry(QtCore.QRect(10, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_UserStop.setFont(font)
+        self.btn_UserStop.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_UserStop.setObjectName("btn_UserStop")
+        self.btn_VacOn = QtWidgets.QPushButton(parent=self.groupBox_10)
+        self.btn_VacOn.setGeometry(QtCore.QRect(110, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_VacOn.setFont(font)
+        self.btn_VacOn.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_VacOn.setObjectName("btn_VacOn")
+        self.groupBox_6 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_6.setGeometry(QtCore.QRect(360, 0, 191, 211))
+        self.groupBox_6.setStyleSheet("QGroupBox {\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
+"    border-radius: 8px; /* 둥근 모서리 */\n"
+"    margin-top: 15px; /* 타이틀 공간 확보 */\n"
+"    background-color: #E0E5EC; /* 배경색 */\n"
+"    padding: 10px;\n"
+"    border-top: 2px solid #B0B9C6;\n"
+"    border-left: 2px solid #B0B9C6;\n"
+"  \n"
+"    \n"
+"    border-bottom: 2px solid #FFFFFF;\n"
+"    border-right: 2px solid #FFFFFF;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* 타이틀 위치 */\n"
+"    padding: 0 5px;\n"
+"    color: #2c3e50; /* 타이틀 글자 색상 */\n"
+"}")
+        self.groupBox_6.setObjectName("groupBox_6")
+        self.layoutWidget = QtWidgets.QWidget(parent=self.groupBox_6)
+        self.layoutWidget.setGeometry(QtCore.QRect(20, 40, 137, 31))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setSpacing(30)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.label = QtWidgets.QLabel(parent=self.layoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.horizontalLayout.addWidget(self.label)
+        self.lcd_W300E = QtWidgets.QLCDNumber(parent=self.layoutWidget)
+        self.lcd_W300E.setStyleSheet("QLCDNumber {\n"
+"    background-color: #1a1a1b; /* 깊은 다크 그레이 */\n"
+"    border: 2px solid #3e3e42;\n"
+"    border-radius: 8px;\n"
+"    color: #00ffcc; /* 네온 민트색 (숫자 색상) */\n"
+"    padding: 5px;\n"
+"}")
+        self.lcd_W300E.setSegmentStyle(QtWidgets.QLCDNumber.SegmentStyle.Flat)
+        self.lcd_W300E.setObjectName("lcd_W300E")
+        self.horizontalLayout.addWidget(self.lcd_W300E)
+        self.layoutWidget_2 = QtWidgets.QWidget(parent=self.groupBox_6)
+        self.layoutWidget_2.setGeometry(QtCore.QRect(20, 120, 137, 31))
+        self.layoutWidget_2.setObjectName("layoutWidget_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.layoutWidget_2)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setSpacing(30)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label_5 = QtWidgets.QLabel(parent=self.layoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_5.setFont(font)
+        self.label_5.setObjectName("label_5")
+        self.horizontalLayout_2.addWidget(self.label_5)
+        self.lcd_W400E = QtWidgets.QLCDNumber(parent=self.layoutWidget_2)
+        self.lcd_W400E.setStyleSheet("QLCDNumber {\n"
+"    background-color: #1a1a1b; /* 깊은 다크 그레이 */\n"
+"    border: 2px solid #3e3e42;\n"
+"    border-radius: 8px;\n"
+"    color: #00ffcc; /* 네온 민트색 (숫자 색상) */\n"
+"    padding: 5px;\n"
+"}")
+        self.lcd_W400E.setSegmentStyle(QtWidgets.QLCDNumber.SegmentStyle.Flat)
+        self.lcd_W400E.setObjectName("lcd_W400E")
+        self.horizontalLayout_2.addWidget(self.lcd_W400E)
+        self.layoutWidget_3 = QtWidgets.QWidget(parent=self.groupBox_6)
+        self.layoutWidget_3.setGeometry(QtCore.QRect(20, 80, 121, 31))
+        self.layoutWidget_3.setObjectName("layoutWidget_3")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.layoutWidget_3)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 2)
+        self.horizontalLayout_4.setSpacing(53)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.label_8 = QtWidgets.QLabel(parent=self.layoutWidget_3)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_8.setFont(font)
+        self.label_8.setObjectName("label_8")
+        self.horizontalLayout_4.addWidget(self.label_8)
+        self.lbl_B300E = QtWidgets.QLabel(parent=self.layoutWidget_3)
+        self.lbl_B300E.setStyleSheet("QLabel {\n"
+"/* 원형 만들기: 너비의 절반*/\n"
+"border-radius: 14px;\n"
+"\n"
+"/*입체감을 위한 그라데이션*/\n"
+"background-color: qradialgradient(\n"
+"    cx: 0.5, cy: 0.5, radius: 0.8,\n"
+"    fx: 0.4, fy:0.4,\n"
+"    stop: 0 #f0f0f0,    /* 중심부: 밝은 연두 */\n"
+"    stop: 0.5 #888888,  /* 중간 선명한 초록 */\n"
+"    stop: 1.0 #444444  /* 테두리 어두운 초록 */\n"
+");\n"
+"\n"
+"/* 미세한 테두리로 선명함 추가 */\n"
+"border: 1px solid #333333;\n"
+"}")
+        self.lbl_B300E.setText("")
+        self.lbl_B300E.setObjectName("lbl_B300E")
+        self.horizontalLayout_4.addWidget(self.lbl_B300E)
+        self.layoutWidget_4 = QtWidgets.QWidget(parent=self.groupBox_6)
+        self.layoutWidget_4.setGeometry(QtCore.QRect(20, 160, 117, 31))
+        self.layoutWidget_4.setObjectName("layoutWidget_4")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.layoutWidget_4)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 2)
+        self.horizontalLayout_3.setSpacing(50)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.label_7 = QtWidgets.QLabel(parent=self.layoutWidget_4)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+        self.horizontalLayout_3.addWidget(self.label_7)
+        self.lbl_B400E = QtWidgets.QLabel(parent=self.layoutWidget_4)
+        self.lbl_B400E.setStyleSheet("QLabel {\n"
+"/* 원형 만들기: 너비의 절반*/\n"
+"border-radius: 14px;\n"
+"\n"
+"/*입체감을 위한 그라데이션*/\n"
+"background-color: qradialgradient(\n"
+"    cx: 0.5, cy: 0.5, radius: 0.8,\n"
+"    fx: 0.4, fy:0.4,\n"
+"    stop: 0 #f0f0f0,    /* 중심부: 밝은 연두 */\n"
+"    stop: 0.5 #888888,  /* 중간 선명한 초록 */\n"
+"    stop: 1.0 #444444  /* 테두리 어두운 초록 */\n"
+");\n"
+"\n"
+"/* 미세한 테두리로 선명함 추가 */\n"
+"border: 1px solid #333333;\n"
+"}")
+        self.lbl_B400E.setText("")
+        self.lbl_B400E.setObjectName("lbl_B400E")
+        self.horizontalLayout_3.addWidget(self.lbl_B400E)
+        self.groupBox_11 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_11.setGeometry(QtCore.QRect(170, 330, 141, 161))
+        self.groupBox_11.setStyleSheet("QGroupBox {\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
+"    border-radius: 8px; /* 둥근 모서리 */\n"
+"    margin-top: 15px; /* 타이틀 공간 확보 */\n"
+"    background-color: #E0E5EC; /* 배경색 */\n"
+"    padding: 10px;\n"
+"    border-top: 2px solid #B0B9C6;\n"
+"    border-left: 2px solid #B0B9C6;\n"
+"  \n"
+"    \n"
+"    border-bottom: 2px solid #FFFFFF;\n"
+"    border-right: 2px solid #FFFFFF;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* 타이틀 위치 */\n"
+"    padding: 0 5px;\n"
+"    color: #2c3e50; /* 타이틀 글자 색상 */\n"
+"}")
+        self.groupBox_11.setObjectName("groupBox_11")
+        self.rBtn_eSave_None = QtWidgets.QRadioButton(parent=self.groupBox_11)
+        self.rBtn_eSave_None.setGeometry(QtCore.QRect(10, 30, 91, 20))
+        self.rBtn_eSave_None.setObjectName("rBtn_eSave_None")
+        self.rBtn_eSave_wait = QtWidgets.QRadioButton(parent=self.groupBox_11)
+        self.rBtn_eSave_wait.setGeometry(QtCore.QRect(10, 60, 91, 20))
+        self.rBtn_eSave_wait.setObjectName("rBtn_eSave_wait")
+        self.rBtn_eSave_saveMode = QtWidgets.QRadioButton(parent=self.groupBox_11)
+        self.rBtn_eSave_saveMode.setGeometry(QtCore.QRect(10, 90, 101, 20))
+        self.rBtn_eSave_saveMode.setObjectName("rBtn_eSave_saveMode")
+        self.rBtn_eSave_shutDown = QtWidgets.QRadioButton(parent=self.groupBox_11)
+        self.rBtn_eSave_shutDown.setGeometry(QtCore.QRect(10, 120, 121, 20))
+        self.rBtn_eSave_shutDown.setObjectName("rBtn_eSave_shutDown")
+        self.groupBox_9 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_9.setGeometry(QtCore.QRect(330, 330, 131, 101))
+        self.groupBox_9.setStyleSheet("QGroupBox {\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
+"    border-radius: 8px; /* 둥근 모서리 */\n"
+"    margin-top: 15px; /* 타이틀 공간 확보 */\n"
+"    background-color: #E0E5EC; /* 배경색 */\n"
+"    padding: 10px;\n"
+"    border-top: 2px solid #B0B9C6;\n"
+"    border-left: 2px solid #B0B9C6;\n"
+"  \n"
+"    \n"
+"    border-bottom: 2px solid #FFFFFF;\n"
+"    border-right: 2px solid #FFFFFF;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* 타이틀 위치 */\n"
+"    padding: 0 5px;\n"
+"    color: #2c3e50; /* 타이틀 글자 색상 */\n"
+"}")
+        self.groupBox_9.setObjectName("groupBox_9")
+        self.rBtn_IF_LD_deployReq = QtWidgets.QRadioButton(parent=self.groupBox_9)
+        self.rBtn_IF_LD_deployReq.setGeometry(QtCore.QRect(20, 30, 91, 20))
+        self.rBtn_IF_LD_deployReq.setObjectName("rBtn_IF_LD_deployReq")
+        self.rBtn_IF_LD_wait = QtWidgets.QRadioButton(parent=self.groupBox_9)
+        self.rBtn_IF_LD_wait.setGeometry(QtCore.QRect(20, 60, 91, 20))
+        self.rBtn_IF_LD_wait.setObjectName("rBtn_IF_LD_wait")
+        self.groupBox_8 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_8.setGeometry(QtCore.QRect(20, 330, 131, 161))
+        self.groupBox_8.setStyleSheet("QGroupBox {\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
+"    border-radius: 8px; /* 둥근 모서리 */\n"
+"    margin-top: 15px; /* 타이틀 공간 확보 */\n"
+"    background-color: #E0E5EC; /* 배경색 */\n"
+"    padding: 10px;\n"
+"    border-top: 2px solid #B0B9C6;\n"
+"    border-left: 2px solid #B0B9C6;\n"
+"  \n"
+"    \n"
+"    border-bottom: 2px solid #FFFFFF;\n"
+"    border-right: 2px solid #FFFFFF;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* 타이틀 위치 */\n"
+"    padding: 0 5px;\n"
+"    color: #2c3e50; /* 타이틀 글자 색상 */\n"
+"}")
+        self.groupBox_8.setObjectName("groupBox_8")
+        self.rBtn_state_run = QtWidgets.QRadioButton(parent=self.groupBox_8)
+        self.rBtn_state_run.setGeometry(QtCore.QRect(20, 30, 91, 20))
+        self.rBtn_state_run.setObjectName("rBtn_state_run")
+        self.rBtn_state_wait = QtWidgets.QRadioButton(parent=self.groupBox_8)
+        self.rBtn_state_wait.setGeometry(QtCore.QRect(20, 60, 91, 20))
+        self.rBtn_state_wait.setObjectName("rBtn_state_wait")
+        self.rBtn_state_userStop = QtWidgets.QRadioButton(parent=self.groupBox_8)
+        self.rBtn_state_userStop.setGeometry(QtCore.QRect(20, 90, 91, 20))
+        self.rBtn_state_userStop.setObjectName("rBtn_state_userStop")
+        self.rBtn_state_trouble = QtWidgets.QRadioButton(parent=self.groupBox_8)
+        self.rBtn_state_trouble.setGeometry(QtCore.QRect(20, 120, 91, 20))
+        self.rBtn_state_trouble.setObjectName("rBtn_state_trouble")
+        self.lbl_EqpState = QtWidgets.QLabel(parent=self.centralwidget)
+        self.lbl_EqpState.setGeometry(QtCore.QRect(30, 510, 421, 31))
+        self.lbl_EqpState.setStyleSheet("QLabel {\n"
+"   background-color: #1a1a1b; /* 깊은 다크 그레이 */\n"
+"    border: 2px solid #3e3e42;\n"
+"    border-radius: 1px;\n"
+"    color: #00ffcc; /* 네온 민트색 (숫자 색상) */\n"
+"    padding: 5px;\n"
+"    \n"
+"}")
+        self.lbl_EqpState.setText("")
+        self.lbl_EqpState.setObjectName("lbl_EqpState")
+        self.lbl_eSaveState = QtWidgets.QLabel(parent=self.centralwidget)
+        self.lbl_eSaveState.setGeometry(QtCore.QRect(30, 550, 421, 31))
+        self.lbl_eSaveState.setStyleSheet("QLabel {\n"
+"   background-color: #1a1a1b; /* 깊은 다크 그레이 */\n"
+"    border: 2px solid #3e3e42;\n"
+"    border-radius: 1px;\n"
+"    color: #00ffcc; /* 네온 민트색 (숫자 색상) */\n"
+"    padding: 5px;\n"
+"    \n"
+"}")
+        self.lbl_eSaveState.setText("")
+        self.lbl_eSaveState.setObjectName("lbl_eSaveState")
+        self.text_event_log = QtWidgets.QTextEdit(parent=self.centralwidget)
+        self.text_event_log.setGeometry(QtCore.QRect(560, 20, 391, 261))
+        self.text_event_log.setObjectName("text_event_log")
+        self.btn_eventLog_clear = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btn_eventLog_clear.setGeometry(QtCore.QRect(840, 290, 111, 31))
+        self.btn_eventLog_clear.setStyleSheet("QPushButton {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); \n"
+"color: #444444;\n"
+"border-radius: 4px;\n"
+"padding: 8px 16px;\n"
+"font-size: 12px;\n"
+"border: 1px solid #B0B0B0;\n"
+"border-bottom: 2px solid #CFCFCF;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #E5E5E5); \n"
+"border-top: 3px solid #A0A0A0;\n"
+"border-left: 3px solid #A8A8A8;\n"
+"border-right: 3px solid #F0F0F0;\n"
+"border-bottom: 3px solid #F8F8F8;\n"
+"\n"
+"padding-left: 18px;\n"
+"padding-top: 11px;\n"
+"color: #005A9E;\n"
+"}")
+        self.btn_eventLog_clear.setObjectName("btn_eventLog_clear")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 978, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -84,3 +681,32 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.btn_connect.setText(_translate("MainWindow", "Connection"))
+        self.groupBox_7.setTitle(_translate("MainWindow", "Polling"))
+        self.btn_start_polling.setText(_translate("MainWindow", "Start"))
+        self.btn_stop_polling.setText(_translate("MainWindow", "Stop"))
+        self.groupBox_2.setTitle(_translate("MainWindow", "Mode execute"))
+        self.btn_eSaving.setText(_translate("MainWindow", "Save"))
+        self.btn_shutDown.setText(_translate("MainWindow", "ShutDown"))
+        self.btn_release.setText(_translate("MainWindow", "Releasd"))
+        self.groupBox_10.setTitle(_translate("MainWindow", "Operation switch"))
+        self.btn_UserStop.setText(_translate("MainWindow", "User stop"))
+        self.btn_VacOn.setText(_translate("MainWindow", "Vac. On"))
+        self.groupBox_6.setTitle(_translate("MainWindow", "IT Interface"))
+        self.label.setText(_translate("MainWindow", "W300E"))
+        self.label_5.setText(_translate("MainWindow", "W400E"))
+        self.label_8.setText(_translate("MainWindow", "B300E"))
+        self.label_7.setText(_translate("MainWindow", "B400E"))
+        self.groupBox_11.setTitle(_translate("MainWindow", "E-Saving State"))
+        self.rBtn_eSave_None.setText(_translate("MainWindow", "Disable"))
+        self.rBtn_eSave_wait.setText(_translate("MainWindow", "Enable"))
+        self.rBtn_eSave_saveMode.setText(_translate("MainWindow", "Save Mode"))
+        self.rBtn_eSave_shutDown.setText(_translate("MainWindow", "Shut Down Mode"))
+        self.groupBox_9.setTitle(_translate("MainWindow", "LD to DGS Interface"))
+        self.rBtn_IF_LD_deployReq.setText(_translate("MainWindow", "Deploy Req."))
+        self.rBtn_IF_LD_wait.setText(_translate("MainWindow", "Wait"))
+        self.groupBox_8.setTitle(_translate("MainWindow", "EQP State setting"))
+        self.rBtn_state_run.setText(_translate("MainWindow", "Run"))
+        self.rBtn_state_wait.setText(_translate("MainWindow", "Wait"))
+        self.rBtn_state_userStop.setText(_translate("MainWindow", "User stop"))
+        self.rBtn_state_trouble.setText(_translate("MainWindow", "Trouble"))
+        self.btn_eventLog_clear.setText(_translate("MainWindow", "Clear"))
