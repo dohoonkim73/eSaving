@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>978</width>
-    <height>670</height>
+    <height>695</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1101,6 +1101,78 @@ color: #005A9E;
     </property>
     <property name="text">
      <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_to_Energy">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>600</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); 
+color: #444444;
+border-radius: 4px;
+padding: 8px 16px;
+font-size: 12px;
+border: 1px solid #B0B0B0;
+border-bottom: 2px solid #CFCFCF;
+}
+
+QPushButton:pressed {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #E5E5E5); 
+border-top: 3px solid #A0A0A0;
+border-left: 3px solid #A8A8A8;
+border-right: 3px solid #F0F0F0;
+border-bottom: 3px solid #F8F8F8;
+
+padding-left: 18px;
+padding-top: 11px;
+color: #005A9E;
+}</string>
+    </property>
+    <property name="text">
+     <string>Energy Meter</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_to_temp">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>600</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); 
+color: #444444;
+border-radius: 4px;
+padding: 8px 16px;
+font-size: 12px;
+border: 1px solid #B0B0B0;
+border-bottom: 2px solid #CFCFCF;
+}
+
+QPushButton:pressed {
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #E5E5E5); 
+border-top: 3px solid #A0A0A0;
+border-left: 3px solid #A8A8A8;
+border-right: 3px solid #F0F0F0;
+border-bottom: 3px solid #F8F8F8;
+
+padding-left: 18px;
+padding-top: 11px;
+color: #005A9E;
+}</string>
+    </property>
+    <property name="text">
+     <string>Temp Contol</string>
     </property>
    </widget>
   </widget>

@@ -9,7 +9,7 @@ from eSaving.workers.plc_worker import PlcWorker
 
 class MainPresenter(QObject):
     
-    switch_to_power = pyqtSignal()
+    switch_to_energy = pyqtSignal()
     switch_to_tmep = pyqtSignal()
     
     def __init__(self, main_view: MainView, plc_service: PlcService, plc_worker: PlcWorker):    # IDE 자동완성을 위해 타입힌트 사용
@@ -23,6 +23,10 @@ class MainPresenter(QObject):
         self.connect_signals()
         
     def connect_signals(self):
+        
+        # 메인화면에서 서브화면 호출
+        self.main_view.ui.btn_to_Energy.clicked.connect(self.switch_to_energy.emit)
+        self.main_view.ui.btn_to_temp.clicked.connect(self.switch_to_tmep.emit)
         
         # PLC 연결 버튼
         self.main_view.ui.btn_connect.clicked.connect(self.connect_plc)

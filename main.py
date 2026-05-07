@@ -14,18 +14,54 @@ from eSaving.services.plc_service import PlcService
 from eSaving.workers.plc_worker import PlcWorker
 from eSaving.presenters.main_presenter import MainPresenter
 
+from eSaving.views.energy_view import EnergyView
+from eSaving.workers.energy_worker import EnergyWorker
+from eSaving.models.energy_model import EnergyModel
+from eSaving.presenters.energy_presenter import EnergyPresenter
+
+from eSaving.views.temp_view import TemperatureView
+from eSaving.workers.temp_worker import TemperatureWorker
+from eSaving.presenters.temp_presenter import TemperaturePresenter
+
 class AppManager:
     
     def __init__(self):
         
-        # 1. 인스턴스 생성
+        # 1. 메인화면관련 인스턴스 생성
         self.main_view = MainView()
         self.plc_service = PlcService()
         self.plc_worker = PlcWorker(self.plc_service)
         
         self.main_presenter = MainPresenter(self.main_view, self.plc_service, self.plc_worker)
         
+        # 2. 전력량계 관련 인스턴스 생성
+        self.energy_view = EnergyView()
+        self.energy_model = EnergyModel()
+        self.energy_worker = EnergyWorker(self.energy_model)
+        self.energy_presenter = EnergyPresenter(self.energy_view, self.energy_model, self.energy_worker)
         
+        # 3. 온도컨트롤 관련 인스턴스 생성
+        self.temp_view = TemperatureView()
+        self.temp_worker = TemperatureWorker()
+        self.temp_presenter = TemperaturePresenter(self.temp_view, self.temp_worker)
+        
+        # 화면 표시 시그널 연결
+        self.main_presenter.switch_to_energy.connect(self.show_energy_screen)   # 전력량계 시뮬레이터 표시
+        self.main_presenter.switch_to_tmep.connect(self.show_temp_screen)       # 온도컨트롤 시뮬레이터 표시
+        self.energy_presenter.switch_to_main.connect(self.show_main_screen)     # 메인 스크린만 표시
+        
+        
+        self.main_view.show()
+        
+    def show_energy_screen(self):
+        self.energy_view.show()
+        
+    def show_temp_screen(self):
+        self.temp_view.show()
+    
+    def show_main_screen(self):
+        self.energy_view.hide()
+        self.temp_view.hide()
         self.main_view.show()
         
 if __name__ == "__main__":

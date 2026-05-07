@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(978, 670)
+        MainWindow.resize(978, 695)
         MainWindow.setStyleSheet("background-color: #E0E5EC;")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -665,6 +665,54 @@ class Ui_MainWindow(object):
 "color: #005A9E;\n"
 "}")
         self.btn_eventLog_clear.setObjectName("btn_eventLog_clear")
+        self.btn_to_Energy = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btn_to_Energy.setGeometry(QtCore.QRect(20, 600, 121, 41))
+        self.btn_to_Energy.setStyleSheet("QPushButton {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); \n"
+"color: #444444;\n"
+"border-radius: 4px;\n"
+"padding: 8px 16px;\n"
+"font-size: 12px;\n"
+"border: 1px solid #B0B0B0;\n"
+"border-bottom: 2px solid #CFCFCF;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #E5E5E5); \n"
+"border-top: 3px solid #A0A0A0;\n"
+"border-left: 3px solid #A8A8A8;\n"
+"border-right: 3px solid #F0F0F0;\n"
+"border-bottom: 3px solid #F8F8F8;\n"
+"\n"
+"padding-left: 18px;\n"
+"padding-top: 11px;\n"
+"color: #005A9E;\n"
+"}")
+        self.btn_to_Energy.setObjectName("btn_to_Energy")
+        self.btn_to_temp = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btn_to_temp.setGeometry(QtCore.QRect(150, 600, 121, 41))
+        self.btn_to_temp.setStyleSheet("QPushButton {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); \n"
+"color: #444444;\n"
+"border-radius: 4px;\n"
+"padding: 8px 16px;\n"
+"font-size: 12px;\n"
+"border: 1px solid #B0B0B0;\n"
+"border-bottom: 2px solid #CFCFCF;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #E5E5E5); \n"
+"border-top: 3px solid #A0A0A0;\n"
+"border-left: 3px solid #A8A8A8;\n"
+"border-right: 3px solid #F0F0F0;\n"
+"border-bottom: 3px solid #F8F8F8;\n"
+"\n"
+"padding-left: 18px;\n"
+"padding-top: 11px;\n"
+"color: #005A9E;\n"
+"}")
+        self.btn_to_temp.setObjectName("btn_to_temp")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 978, 22))
@@ -710,3 +758,5 @@ class Ui_MainWindow(object):
         self.rBtn_state_userStop.setText(_translate("MainWindow", "User stop"))
         self.rBtn_state_trouble.setText(_translate("MainWindow", "Trouble"))
         self.btn_eventLog_clear.setText(_translate("MainWindow", "Clear"))
+        self.btn_to_Energy.setText(_translate("MainWindow", "Energy Meter"))
+        self.btn_to_temp.setText(_translate("MainWindow", "Temp Contol"))
