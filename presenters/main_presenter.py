@@ -12,12 +12,13 @@ class MainPresenter(QObject):
     switch_to_power = pyqtSignal()
     switch_to_tmep = pyqtSignal()
     
-    def __init__(self, main_view: MainView, plc_service: PlcService):    # IDE 자동완성을 위해 타입힌트 사용
+    def __init__(self, main_view: MainView, plc_service: PlcService, plc_worker: PlcWorker):    # IDE 자동완성을 위해 타입힌트 사용
         super().__init__()
         
         # 객체 생성
         self.main_view = main_view
         self.plc_service = plc_service
+        self.plc_worker = plc_worker
         
         self.connect_signals()
         
@@ -45,6 +46,8 @@ class MainPresenter(QObject):
         
         
         
+        
+        
     def connect_plc(self):
         success, message = self.plc_service.connection()   # PlcService 클래스 내 connectio함수를 실행해라
         
@@ -60,17 +63,21 @@ class MainPresenter(QObject):
     def start_polling(self):
         # 1. 스레드 생성
         self.thread: QThread = QThread()
-        self.worker = PlcWorker(self.plc_service)
+        self.plc_worker = PlcWorker(self.plc_service)
         
         # 2. 스레드 이동 및 연결
-        self.worker.moveToThread(self.thread)  # PlcWorker클래스를 스레드로 이동
-        self.thread.started.connect(self.worker.run)
+        self.plc_worker.moveToThread(self.thread)  # PlcWorker클래스를 스레드로 이동
+        self.thread.started.connect(self.plc_worker.run)
+        
+        self.plc_worker.data_received_eventLog.connect(self.event_log)
+        self.plc_worker.data_received_state.connect(self.update_eSaveState)
+        self.plc_worker.data_received_ITinterface.connect(self.update_ITinterface)
         
         # 3. 스레드 시작
         self.thread.start()
         
     def stop_polling(self):
-        self.worker.stop()
+        self.plc_worker.stop()
         self.thread.quit()
         self.thread.wait()
         
@@ -118,6 +125,7 @@ class MainPresenter(QObject):
             return
             
     def update_eSaveState(self, eSaveState):
+        print("장비상태 라디오버튼에 표시")
         radioButton = [
             self.main_view.ui.rBtn_eSave_None,
             self.main_view.ui.rBtn_eSave_wait,
@@ -147,10 +155,32 @@ class MainPresenter(QObject):
             for btn in radioButton:
                 btn.blockSignals(False)
                        
-    
+    def update_ITinterface(self, ITinterface):
+        self.main_view.ui.lcd_W300E.display(ITinterface[1])
+        self.main_view.ui.lcd_W400E.display(ITinterface[3])
+        
+        lampColor = "qradialgradient(cx: 0.5, cy: 0.5, radius: 0.8,fx: 0.4, fy:0.4,stop: 0 #aaffaa,stop: 0.5 #22dd22,stop: 1.0 #118811)"
+        lampBorder = "1px solid #333333;"
+        color = f"{lampColor}" if ITinterface[0] else "gray"
+        self.main_view.ui.lbl_B300E.setStyleSheet(
+            f"background-color: {color};"
+                "border-radius: 14px;"
+            f"border: {lampBorder}"
+            )
+            
+        
+        lampColor = "qradialgradient(cx: 0.5, cy: 0.5, radius: 0.8,fx: 0.4, fy:0.4,stop: 0 #aaffaa,stop: 0.5 #22dd22,stop: 1.0 #118811)"
+        lampBorder = "1px solid #333333;"
+        color = f"{lampColor}" if ITinterface[2] else "gray"
+        self.main_view.ui.lbl_B400E.setStyleSheet(
+            f"background-color: {color};"
+            "border-radius: 14px;"
+            f"border: {lampBorder}"
+            ) 
     
     """ 이벤트 로그 """
     def event_log(self, message):
+        print("이벤트 로그 입력")
         now = datetime.now().strftime("%H:%M:%S")
         log_message = f"[{now}] {message}"
         
