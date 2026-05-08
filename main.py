@@ -27,12 +27,7 @@ class AppManager:
     
     def __init__(self):
         
-        # 1. 메인화면관련 인스턴스 생성
-        self.main_view = MainView()
-        self.plc_service = PlcService()
-        self.plc_worker = PlcWorker(self.plc_service)
         
-        self.main_presenter = MainPresenter(self.main_view, self.plc_service, self.plc_worker)
         
         # 2. 전력량계 관련 인스턴스 생성
         self.energy_view = EnergyView()
@@ -44,6 +39,15 @@ class AppManager:
         self.temp_view = TemperatureView()
         self.temp_worker = TemperatureWorker()
         self.temp_presenter = TemperaturePresenter(self.temp_view, self.temp_worker)
+        
+        # 1. 메인화면관련 인스턴스 생성
+        self.main_view = MainView()
+        self.plc_service = PlcService()
+        self.plc_worker = PlcWorker(self.plc_service)
+        
+        self.ePresenter = self.energy_presenter
+        
+        self.main_presenter = MainPresenter(self.main_view, self.plc_service, self.plc_worker, self.ePresenter)
         
         # 화면 표시 시그널 연결
         self.main_presenter.switch_to_energy.connect(self.show_energy_screen)   # 전력량계 시뮬레이터 표시

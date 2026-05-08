@@ -13,6 +13,7 @@ from eSaving.models.energy_model import EnergyModel
 class EnergyPresenter(QObject):
     
     switch_to_main = pyqtSignal()
+    dataSend_energyToMain = pyqtSignal(object)
     
     def __init__(self, energy_view: EnergyView, energy_worker: EnergyWorker, energy_model: EnergyModel):
         super().__init__()
@@ -61,6 +62,8 @@ class EnergyPresenter(QObject):
         print("전력량 UI표시")
         self.energy_view.ui.lbl_power.setText(f"{power: .2f} W")
         self.energy_view.ui.lbl_energy.setText(f"{energy: .5f} kwh")
+        
+        self.dataSend_energyToMain.emit([power, energy])
         
         plc_power = power * 100
         plc_energy = energy * 100000

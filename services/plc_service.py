@@ -51,4 +51,13 @@ class PlcService:
             return True, values
         except Exception as e:
             return False, str(e)
+        
+    def wirte_DwordAddress(self, address, values):
+        print("전력량계 값 쓰기")
+        print(f"어드레스: {address}", f"값: {values}")
+        try:
+            self.plc.randomwrite(word_devices=["D7004"], word_values=[333], dword_devices=address, dword_values=values)
+            return True, values
+        except Exception as e:
+            return False, str(e)
     

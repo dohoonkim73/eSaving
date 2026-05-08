@@ -7,18 +7,22 @@ from eSaving.views.main_view import MainView
 from eSaving.services.plc_service import PlcService
 from eSaving.workers.plc_worker import PlcWorker
 
+from eSaving.presenters.energy_presenter import EnergyPresenter
+
 class MainPresenter(QObject):
     
     switch_to_energy = pyqtSignal()
     switch_to_tmep = pyqtSignal()
     
-    def __init__(self, main_view: MainView, plc_service: PlcService, plc_worker: PlcWorker):    # IDE 자동완성을 위해 타입힌트 사용
+    def __init__(self, main_view: MainView, plc_service: PlcService, plc_worker: PlcWorker, energy_presenter: EnergyPresenter):    # IDE 자동완성을 위해 타입힌트 사용
         super().__init__()
         
         # 객체 생성
         self.main_view = main_view
         self.plc_service = plc_service
         self.plc_worker = plc_worker
+        
+        self.energy_presenter = energy_presenter
         
         self.connect_signals()
         
@@ -48,9 +52,7 @@ class MainPresenter(QObject):
         # 장비 상태 설정 라디오 버튼
         self.main_view.ui.rBtn_state_run.toggled.connect(self.set_eqpState)
         
-        
-        
-        
+        self.energy_presenter.dataSend_energyToMain.connect(self.energyMeter_data)
         
     def connect_plc(self):
         success, message = self.plc_service.connection()   # PlcService 클래스 내 connectio함수를 실행해라
@@ -192,6 +194,22 @@ class MainPresenter(QObject):
             
     def eventLog_clear(self):
         self.main_view.ui.text_event_log.clear()
+        
+    """ 전력량계 """
+    def energyMeter_data(self, data):
+        
+        power_value = int(data[0] * 100)
+        energy_value = int(data[1] * 1000000)
+        print(f"전력량계 전압: {power_value}")
+        print(f"전력량계 전산전력: {energy_value}")
+        print(type(power_value))
+        print(type(energy_value))
+        success, message = self.plc_service.wirte_DwordAddress(["D7000", "D7002"], [power_value, energy_value])
+        if success:
+            print("전력량계 값 쓰기 성공")
+        else:
+            print("전력량계 값 쓰기 실패", f"{message}")
+        
             
     
         
