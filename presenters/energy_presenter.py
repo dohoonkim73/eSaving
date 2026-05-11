@@ -60,7 +60,7 @@ class EnergyPresenter(QObject):
     @pyqtSlot(float, float)
     def update_ui(self, power, energy):
         print("전력량 UI표시")
-        self.energy_view.ui.lbl_power.setText(f"{power: .2f} W")
+        self.energy_view.ui.lbl_power.setText(f"{power: .2f} kw")
         self.energy_view.ui.lbl_energy.setText(f"{energy: .5f} kwh")
         
         self.dataSend_energyToMain.emit([power, energy])

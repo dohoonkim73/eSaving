@@ -30,7 +30,7 @@ class EnergyWorker(QObject):
             prev_time = current_time
             
             # 전력 시뮬레이션 (랜덤)
-            power = random.uniform(10, 12)
+            power = random.uniform(100, 120)
             
             # 모델 업데이트.
             self.model.update(power, dt)
@@ -38,7 +38,7 @@ class EnergyWorker(QObject):
             print(f"시간변화량{dt}")
             
             # UI로 전달
-            self.power_data_update.emit(power, self.model.energy_kwh)
+            self.power_data_update.emit(self.model.power_kw, self.model.energy_kwh)
             
             print(f"에너지값{self.model.energy_kwh}")
             print("전력량계 Polling 진행중")

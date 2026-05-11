@@ -51,6 +51,13 @@ class MainPresenter(QObject):
         
         # 장비 상태 설정 라디오 버튼
         self.main_view.ui.rBtn_state_run.toggled.connect(self.set_eqpState)
+        self.main_view.ui.rBtn_state_wait.toggled.connect(self.set_eqpState)
+        self.main_view.ui.rBtn_state_userStop.toggled.connect(self.set_eqpState)
+        self.main_view.ui.rBtn_state_trouble.toggled.connect(self.set_eqpState)
+        
+        # 장비간 인터페이스 라디오 버튼
+        self.main_view.ui.rBtn_IF_LD_deployReq.toggled.connect(self.set_LD_interface)
+        self.main_view.ui.rBtn_IF_LD_wait.toggled.connect(self.set_LD_interface)
         
         self.energy_presenter.dataSend_energyToMain.connect(self.energyMeter_data)
         
