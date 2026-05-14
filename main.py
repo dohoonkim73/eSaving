@@ -23,6 +23,9 @@ from eSaving.views.temp_view import TemperatureView
 from eSaving.workers.temp_worker import TemperatureWorker
 from eSaving.presenters.temp_presenter import TemperaturePresenter
 
+from eSaving.views.history_view import HistoryView
+from eSaving.presenters.history_presenter import HistoryPresenter
+
 class AppManager:
     
     def __init__(self):
@@ -40,6 +43,8 @@ class AppManager:
         self.temp_worker = TemperatureWorker()
         self.temp_presenter = TemperaturePresenter(self.temp_view, self.temp_worker)
         
+        
+        
         # 1. 메인화면관련 인스턴스 생성
         self.main_view = MainView()
         self.plc_service = PlcService()
@@ -49,24 +54,42 @@ class AppManager:
         
         self.main_presenter = MainPresenter(self.main_view, self.plc_service, self.plc_worker, self.ePresenter)
         
+        # 4. 이력화면 관련 인스턴스 생성
+        self.history_view = HistoryView()
+        self.history_presenter = HistoryPresenter(self.history_view, self.plc_worker)
+        
+        
+        
         # 화면 표시 시그널 연결
         self.main_presenter.switch_to_energy.connect(self.show_energy_screen)   # 전력량계 시뮬레이터 표시
         self.main_presenter.switch_to_tmep.connect(self.show_temp_screen)       # 온도컨트롤 시뮬레이터 표시
+        self.main_presenter.switch_to_history.connect(self.show_history_screen) # 이력화면 표시
         self.energy_presenter.switch_to_main.connect(self.show_main_screen)     # 메인 스크린만 표시
+        self.history_presenter.switch_to_main.connect(self.out_history_screen)
         
         
         self.main_view.show()
         
     def show_energy_screen(self):
+        print("전력량계 화면")
         self.energy_view.show()
         
     def show_temp_screen(self):
         self.temp_view.show()
+        
+    def show_history_screen(self):
+        print("history 화면")
+        self.history_view.show()
+        
+    def out_history_screen(self):
+        self.history_view.hide()
+        self.main_view.show()
     
     def show_main_screen(self):
         self.energy_view.hide()
         self.temp_view.hide()
         self.main_view.show()
+        
         
 if __name__ == "__main__":
     app = QApplication(sys.argv)

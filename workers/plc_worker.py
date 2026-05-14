@@ -11,6 +11,8 @@ class PlcWorker(QObject):
     data_received_state = pyqtSignal(object)
     data_received_ITinterface = pyqtSignal(object)
     data_received_eventLog = pyqtSignal(object)
+    data_received_historyMonth = pyqtSignal(object)
+    data_received_historyDay = pyqtSignal(object)
     
     def __init__(self, plc_service:PlcService):
         super().__init__()
@@ -27,6 +29,13 @@ class PlcWorker(QObject):
                 eqpState = self.plc_service.plc.batchread_wordunits(headdevice="D100", readsize=2)
                 print("실시간 상태정보 읽기")
                 self.data_received_state.emit(eqpState)
+                
+                # History 정보 읽어오기
+                read_history_month = self.plc_service.plc.batchread_wordunits(headdevice="D9000", readsize=30)
+                read_history_day = self.plc_service.plc.batchread_wordunits(headdevice="D9100", readsize=30)
+                self.data_received_historyMonth.emit(read_history_month)
+                print(read_history_month)
+                self.data_received_historyDay.emit(read_history_day)
                 
                 # IT 인터페이스 관련 데이터 읽어오기
                 read_B300E = self.plc_service.plc.batchread_bitunits(headdevice="B300E", readsize=1)

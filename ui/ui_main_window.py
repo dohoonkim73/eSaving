@@ -713,6 +713,30 @@ class Ui_MainWindow(object):
 "color: #005A9E;\n"
 "}")
         self.btn_to_temp.setObjectName("btn_to_temp")
+        self.btn_to_history = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.btn_to_history.setGeometry(QtCore.QRect(280, 600, 121, 41))
+        self.btn_to_history.setStyleSheet("QPushButton {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); \n"
+"color: #444444;\n"
+"border-radius: 4px;\n"
+"padding: 8px 16px;\n"
+"font-size: 12px;\n"
+"border: 1px solid #B0B0B0;\n"
+"border-bottom: 2px solid #CFCFCF;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #E5E5E5); \n"
+"border-top: 3px solid #A0A0A0;\n"
+"border-left: 3px solid #A8A8A8;\n"
+"border-right: 3px solid #F0F0F0;\n"
+"border-bottom: 3px solid #F8F8F8;\n"
+"\n"
+"padding-left: 18px;\n"
+"padding-top: 11px;\n"
+"color: #005A9E;\n"
+"}")
+        self.btn_to_history.setObjectName("btn_to_history")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 978, 22))
@@ -760,3 +784,4 @@ class Ui_MainWindow(object):
         self.btn_eventLog_clear.setText(_translate("MainWindow", "Clear"))
         self.btn_to_Energy.setText(_translate("MainWindow", "Energy Meter"))
         self.btn_to_temp.setText(_translate("MainWindow", "Temp Contol"))
+        self.btn_to_history.setText(_translate("MainWindow", "History"))

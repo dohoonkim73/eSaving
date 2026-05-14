@@ -13,6 +13,7 @@ class MainPresenter(QObject):
     
     switch_to_energy = pyqtSignal()
     switch_to_tmep = pyqtSignal()
+    switch_to_history = pyqtSignal()
     
     def __init__(self, main_view: MainView, plc_service: PlcService, plc_worker: PlcWorker, energy_presenter: EnergyPresenter):    # IDE 자동완성을 위해 타입힌트 사용
         super().__init__()
@@ -31,6 +32,7 @@ class MainPresenter(QObject):
         # 메인화면에서 서브화면 호출
         self.main_view.ui.btn_to_Energy.clicked.connect(self.switch_to_energy.emit)
         self.main_view.ui.btn_to_temp.clicked.connect(self.switch_to_tmep.emit)
+        self.main_view.ui.btn_to_history.clicked.connect(self.switch_to_history.emit)
         
         # PLC 연결 버튼
         self.main_view.ui.btn_connect.clicked.connect(self.connect_plc)
