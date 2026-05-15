@@ -13,6 +13,9 @@ class PlcWorker(QObject):
     data_received_eventLog = pyqtSignal(object)
     data_received_historyMonth = pyqtSignal(object)
     data_received_historyDay = pyqtSignal(object)
+    data_received_historyDate = pyqtSignal(object)
+    data_received_historyTime = pyqtSignal(object)
+    data_received_historyData = pyqtSignal(object)
     
     def __init__(self, plc_service:PlcService):
         super().__init__()
@@ -31,11 +34,28 @@ class PlcWorker(QObject):
                 self.data_received_state.emit(eqpState)
                 
                 # History 정보 읽어오기
-                read_history_month = self.plc_service.plc.batchread_wordunits(headdevice="D9000", readsize=30)
-                read_history_day = self.plc_service.plc.batchread_wordunits(headdevice="D9100", readsize=30)
-                self.data_received_historyMonth.emit(read_history_month)
-                print(read_history_month)
-                self.data_received_historyDay.emit(read_history_day)
+                read_history_month = self.plc_service.plc.batchread_wordunits(headdevice="D8000", readsize=30)
+                read_history_day = self.plc_service.plc.batchread_wordunits(headdevice="D8100", readsize=30)
+                read_history_qty = self.plc_service.plc.batchread_wordunits(headdevice="D8200", readsize=30)
+                read_history_runTime = self.plc_service.plc.batchread_wordunits(headdevice="D8300", readsize=30)
+                read_history_downTime = self.plc_service.plc.batchread_wordunits(headdevice="D8400", readsize=30)
+                read_history_saveTime = self.plc_service.plc.batchread_wordunits(headdevice="D8500", readsize=30)
+                read_history_shutDownTime = self.plc_service.plc.batchread_wordunits(headdevice="D8600", readsize=30) 
+                read_history_totalTime = self.plc_service.plc.batchread_wordunits(headdevice="D8700", readsize=30)
+                #self.data_received_historyMonth.emit(read_history_month)
+                #print(read_history_month)
+                #self.data_received_historyDay.emit(read_history_day)
+                #data_historyDate = [[read_history_month] + [read_history_day]]
+                data_history = [
+                    read_history_month, read_history_day,
+                    read_history_qty,
+                    read_history_runTime, read_history_downTime, read_history_saveTime, read_history_shutDownTime, read_history_totalTime
+                ]
+                self.data_received_historyData.emit(data_history)
+                data_historyDate = [read_history_month, read_history_day]
+                self.data_received_historyDate.emit(data_historyDate)
+                data_historyTime = [read_history_runTime, read_history_downTime, read_history_saveTime, read_history_shutDownTime, read_history_totalTime]
+                self.data_received_historyTime.emit(data_historyTime)
                 
                 # IT 인터페이스 관련 데이터 읽어오기
                 read_B300E = self.plc_service.plc.batchread_bitunits(headdevice="B300E", readsize=1)

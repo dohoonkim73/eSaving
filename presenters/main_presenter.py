@@ -8,12 +8,18 @@ from eSaving.services.plc_service import PlcService
 from eSaving.workers.plc_worker import PlcWorker
 
 from eSaving.presenters.energy_presenter import EnergyPresenter
+#from eSaving.presenters.history_presenter import HistoryPresenter
 
 class MainPresenter(QObject):
     
     switch_to_energy = pyqtSignal()
     switch_to_tmep = pyqtSignal()
     switch_to_history = pyqtSignal()
+    
+    history_mon = pyqtSignal(object)
+    history_day = pyqtSignal(object)
+    history_date = pyqtSignal(object)
+    history_data = pyqtSignal(object)
     
     def __init__(self, main_view: MainView, plc_service: PlcService, plc_worker: PlcWorker, energy_presenter: EnergyPresenter):    # IDE 자동완성을 위해 타입힌트 사용
         super().__init__()
@@ -24,6 +30,9 @@ class MainPresenter(QObject):
         self.plc_worker = plc_worker
         
         self.energy_presenter = energy_presenter
+        
+        # 5/15일 추가
+        #self.history_presenter = history_presenter
         
         self.connect_signals()
         
@@ -87,6 +96,9 @@ class MainPresenter(QObject):
         self.plc_worker.data_received_eventLog.connect(self.event_log)
         self.plc_worker.data_received_state.connect(self.update_eSaveState)
         self.plc_worker.data_received_ITinterface.connect(self.update_ITinterface)
+        #self.plc_worker.data_received_historyMonth.connect(self.update_historyData)
+        #self.plc_worker.data_received_historyDate.connect(self.update_historyData)
+        self.plc_worker.data_received_historyData.connect(self.update_historyData)
         
         # 3. 스레드 시작
         self.thread.start()
@@ -192,6 +204,12 @@ class MainPresenter(QObject):
             "border-radius: 14px;"
             f"border: {lampBorder}"
             ) 
+        
+    def update_historyData(self, historyData):
+        
+        #self.history_mon.emit(mon)
+        self.history_data.emit(historyData)
+        
     
     """ 이벤트 로그 """
     def event_log(self, message):

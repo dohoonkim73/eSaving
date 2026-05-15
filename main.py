@@ -56,7 +56,7 @@ class AppManager:
         
         # 4. 이력화면 관련 인스턴스 생성
         self.history_view = HistoryView()
-        self.history_presenter = HistoryPresenter(self.history_view, self.plc_worker)
+        self.history_presenter = HistoryPresenter(self.history_view, self.main_presenter)
         
         
         
