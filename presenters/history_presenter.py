@@ -45,5 +45,10 @@ class HistoryPresenter(QObject):
             table.setItem(i, 5, QTableWidgetItem(str(data[5][i*2])))
             table.setItem(i, 6, QTableWidgetItem(str(data[6][i*2])))
             table.setItem(i, 7, QTableWidgetItem(str(data[7][i*2])))
+            table.setItem(i, 8, QTableWidgetItem(str(data[8][i*2])))
+            table.setItem(i, 9, QTableWidgetItem(str(data[9][i*2])))
+            table.setItem(i, 10, QTableWidgetItem(str(data[10][i*2])))
+            table.setItem(i, 11, QTableWidgetItem(str(data[11][i*2])))
+            table.setItem(i, 12, QTableWidgetItem(str(data[12][i*2])))
         
         

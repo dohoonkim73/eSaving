@@ -42,6 +42,11 @@ class PlcWorker(QObject):
                 read_history_saveTime = self.plc_service.plc.batchread_wordunits(headdevice="D8500", readsize=30)
                 read_history_shutDownTime = self.plc_service.plc.batchread_wordunits(headdevice="D8600", readsize=30) 
                 read_history_totalTime = self.plc_service.plc.batchread_wordunits(headdevice="D8700", readsize=30)
+                read_history_runEnergy = self.plc_service.plc.batchread_wordunits(headdevice="D8800", readsize=30)
+                read_history_downEnergy = self.plc_service.plc.batchread_wordunits(headdevice="D8900", readsize=30)
+                read_history_saveEnergy = self.plc_service.plc.batchread_wordunits(headdevice="D9000", readsize=30)
+                read_history_shutDownEnergy = self.plc_service.plc.batchread_wordunits(headdevice="D9100", readsize=30)
+                read_history_totalEnergy = self.plc_service.plc.batchread_wordunits(headdevice="D9200", readsize=30)
                 #self.data_received_historyMonth.emit(read_history_month)
                 #print(read_history_month)
                 #self.data_received_historyDay.emit(read_history_day)
@@ -49,7 +54,8 @@ class PlcWorker(QObject):
                 data_history = [
                     read_history_month, read_history_day,
                     read_history_qty,
-                    read_history_runTime, read_history_downTime, read_history_saveTime, read_history_shutDownTime, read_history_totalTime
+                    read_history_runTime, read_history_downTime, read_history_saveTime, read_history_shutDownTime, read_history_totalTime,
+                    read_history_runEnergy, read_history_downEnergy, read_history_saveEnergy, read_history_shutDownEnergy, read_history_totalEnergy
                 ]
                 self.data_received_historyData.emit(data_history)
                 data_historyDate = [read_history_month, read_history_day]
