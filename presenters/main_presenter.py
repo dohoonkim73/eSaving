@@ -60,6 +60,10 @@ class MainPresenter(QObject):
         # 이벤트 로그 클리어 버튼
         self.main_view.ui.btn_eventLog_clear.clicked.connect(self.eventLog_clear)
         
+        # History 화면 관련 버튼
+        self.main_view.ui.btn_DataSft.clicked.connect(self.history_control)
+        self.main_view.ui.btn_DataClear.clicked.connect(self.history_control)
+        
         # 장비 상태 설정 라디오 버튼
         self.main_view.ui.rBtn_state_run.toggled.connect(self.set_eqpState)
         self.main_view.ui.rBtn_state_wait.toggled.connect(self.set_eqpState)
@@ -209,6 +213,19 @@ class MainPresenter(QObject):
         
         #self.history_mon.emit(mon)
         self.history_data.emit(historyData)
+        
+    def history_control(self):
+        self.main_view.ui.btn_DataSft.setCheckable(True)
+        self.main_view.ui.btn_DataClear.setCheckable(True)
+        
+        if self.main_view.ui.btn_DataSft.isChecked():
+            print("데이터 쉬프트 버튼 눌림")
+            self.plc_service.write_bitAddress("B110", True)
+             
+        if self.main_view.ui.btn_DataClear.isChecked():
+            print("데이터 클리어 버튼 눌림")
+            self.plc_service.write_bitAddress("B111", True)
+        
         
     
     """ 이벤트 로그 """

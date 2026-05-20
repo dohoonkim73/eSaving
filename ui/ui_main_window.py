@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(978, 695)
+        MainWindow.resize(978, 652)
         MainWindow.setStyleSheet("background-color: #E0E5EC;")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -513,7 +513,7 @@ class Ui_MainWindow(object):
         self.lbl_B400E.setObjectName("lbl_B400E")
         self.horizontalLayout_3.addWidget(self.lbl_B400E)
         self.groupBox_11 = QtWidgets.QGroupBox(parent=self.centralwidget)
-        self.groupBox_11.setGeometry(QtCore.QRect(170, 330, 141, 161))
+        self.groupBox_11.setGeometry(QtCore.QRect(170, 370, 141, 161))
         self.groupBox_11.setStyleSheet("QGroupBox {\n"
 "    font-weight: bold;\n"
 "    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
@@ -549,7 +549,7 @@ class Ui_MainWindow(object):
         self.rBtn_eSave_shutDown.setGeometry(QtCore.QRect(10, 120, 121, 20))
         self.rBtn_eSave_shutDown.setObjectName("rBtn_eSave_shutDown")
         self.groupBox_9 = QtWidgets.QGroupBox(parent=self.centralwidget)
-        self.groupBox_9.setGeometry(QtCore.QRect(330, 330, 131, 101))
+        self.groupBox_9.setGeometry(QtCore.QRect(330, 370, 131, 101))
         self.groupBox_9.setStyleSheet("QGroupBox {\n"
 "    font-weight: bold;\n"
 "    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
@@ -579,7 +579,7 @@ class Ui_MainWindow(object):
         self.rBtn_IF_LD_wait.setGeometry(QtCore.QRect(20, 60, 91, 20))
         self.rBtn_IF_LD_wait.setObjectName("rBtn_IF_LD_wait")
         self.groupBox_8 = QtWidgets.QGroupBox(parent=self.centralwidget)
-        self.groupBox_8.setGeometry(QtCore.QRect(20, 330, 131, 161))
+        self.groupBox_8.setGeometry(QtCore.QRect(20, 370, 131, 161))
         self.groupBox_8.setStyleSheet("QGroupBox {\n"
 "    font-weight: bold;\n"
 "    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
@@ -615,7 +615,7 @@ class Ui_MainWindow(object):
         self.rBtn_state_trouble.setGeometry(QtCore.QRect(20, 120, 91, 20))
         self.rBtn_state_trouble.setObjectName("rBtn_state_trouble")
         self.lbl_EqpState = QtWidgets.QLabel(parent=self.centralwidget)
-        self.lbl_EqpState.setGeometry(QtCore.QRect(30, 510, 421, 31))
+        self.lbl_EqpState.setGeometry(QtCore.QRect(510, 420, 421, 31))
         self.lbl_EqpState.setStyleSheet("QLabel {\n"
 "   background-color: #1a1a1b; /* 깊은 다크 그레이 */\n"
 "    border: 2px solid #3e3e42;\n"
@@ -627,7 +627,7 @@ class Ui_MainWindow(object):
         self.lbl_EqpState.setText("")
         self.lbl_EqpState.setObjectName("lbl_EqpState")
         self.lbl_eSaveState = QtWidgets.QLabel(parent=self.centralwidget)
-        self.lbl_eSaveState.setGeometry(QtCore.QRect(30, 550, 421, 31))
+        self.lbl_eSaveState.setGeometry(QtCore.QRect(510, 460, 421, 31))
         self.lbl_eSaveState.setStyleSheet("QLabel {\n"
 "   background-color: #1a1a1b; /* 깊은 다크 그레이 */\n"
 "    border: 2px solid #3e3e42;\n"
@@ -666,7 +666,7 @@ class Ui_MainWindow(object):
 "}")
         self.btn_eventLog_clear.setObjectName("btn_eventLog_clear")
         self.btn_to_Energy = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.btn_to_Energy.setGeometry(QtCore.QRect(20, 600, 121, 41))
+        self.btn_to_Energy.setGeometry(QtCore.QRect(10, 570, 121, 41))
         self.btn_to_Energy.setStyleSheet("QPushButton {\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); \n"
 "color: #444444;\n"
@@ -690,7 +690,7 @@ class Ui_MainWindow(object):
 "}")
         self.btn_to_Energy.setObjectName("btn_to_Energy")
         self.btn_to_temp = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.btn_to_temp.setGeometry(QtCore.QRect(150, 600, 121, 41))
+        self.btn_to_temp.setGeometry(QtCore.QRect(140, 570, 121, 41))
         self.btn_to_temp.setStyleSheet("QPushButton {\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); \n"
 "color: #444444;\n"
@@ -714,7 +714,7 @@ class Ui_MainWindow(object):
 "}")
         self.btn_to_temp.setObjectName("btn_to_temp")
         self.btn_to_history = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.btn_to_history.setGeometry(QtCore.QRect(280, 600, 121, 41))
+        self.btn_to_history.setGeometry(QtCore.QRect(270, 570, 121, 41))
         self.btn_to_history.setStyleSheet("QPushButton {\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); \n"
 "color: #444444;\n"
@@ -737,6 +737,99 @@ class Ui_MainWindow(object):
 "color: #005A9E;\n"
 "}")
         self.btn_to_history.setObjectName("btn_to_history")
+        self.groupBox_12 = QtWidgets.QGroupBox(parent=self.centralwidget)
+        self.groupBox_12.setGeometry(QtCore.QRect(260, 220, 211, 80))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setPointSize(10)
+        font.setBold(True)
+        self.groupBox_12.setFont(font)
+        self.groupBox_12.setStyleSheet("QGroupBox {\n"
+"    font-weight: bold;\n"
+"    border: 2px solid #bdc3c7; /* 테두리 색상 */\n"
+"    border-radius: 8px; /* 둥근 모서리 */\n"
+"    margin-top: 15px; /* 타이틀 공간 확보 */\n"
+"    background-color: #E0E5EC; /* 배경색 */\n"
+"    padding: 10px;\n"
+"    border-top: 2px solid #B0B9C6;\n"
+"    border-left: 2px solid #B0B9C6;\n"
+"  \n"
+"    \n"
+"    border-bottom: 2px solid #FFFFFF;\n"
+"    border-right: 2px solid #FFFFFF;\n"
+"}\n"
+"\n"
+"QGroupBox::title {\n"
+"    subcontrol-origin: margin;\n"
+"    subcontrol-position: top left; /* 타이틀 위치 */\n"
+"    padding: 0 5px;\n"
+"    color: #2c3e50; /* 타이틀 글자 색상 */\n"
+"}")
+        self.groupBox_12.setObjectName("groupBox_12")
+        self.btn_DataSft = QtWidgets.QPushButton(parent=self.groupBox_12)
+        self.btn_DataSft.setGeometry(QtCore.QRect(10, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_DataSft.setFont(font)
+        self.btn_DataSft.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_DataSft.setObjectName("btn_DataSft")
+        self.btn_DataClear = QtWidgets.QPushButton(parent=self.groupBox_12)
+        self.btn_DataClear.setGeometry(QtCore.QRect(110, 30, 84, 38))
+        font = QtGui.QFont()
+        font.setFamily("D2Coding")
+        font.setBold(True)
+        font.setItalic(False)
+        self.btn_DataClear.setFont(font)
+        self.btn_DataClear.setStyleSheet("QPushButton {\n"
+"background-color: #e0e0e0;  /* 부모위젯의 배경색과 맞춰주세요 */\n"
+"border-radius: 12px;\n"
+"border: none;\n"
+"\n"
+"/* Qt에서는 복합 그림자가 안 되므로 테두리 색상차이를 이용 */\n"
+"border-top: 2px solid #ffffff;\n"
+"border-left: 2px solid #ffffff;\n"
+"border-right: 2px solid #bebebe;  /* 오른쪽 아래 어두운 그림자*/\n"
+"border-bottom: 2px solid #bebebe;\n"
+"\n"
+"color: #606060;\n"
+"padding: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"/* 눌렸을 때는 반대로 어두운 쪽이 위로 오게 하여 \'파인\'느낌 생성*/\n"
+"border-top: 2px solid #bebebe;\n"
+"border-left: 2px solid #bebebe;\n"
+"border-right: 2px solid #ffffff;\n"
+"border-bottom: 2px solid #ffffff;\n"
+"background-color: #e0e0e0;  \n"
+"\n"
+"}")
+        self.btn_DataClear.setObjectName("btn_DataClear")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 978, 22))
@@ -785,3 +878,6 @@ class Ui_MainWindow(object):
         self.btn_to_Energy.setText(_translate("MainWindow", "Energy Meter"))
         self.btn_to_temp.setText(_translate("MainWindow", "Temp Contol"))
         self.btn_to_history.setText(_translate("MainWindow", "History"))
+        self.groupBox_12.setTitle(_translate("MainWindow", "History"))
+        self.btn_DataSft.setText(_translate("MainWindow", "Data Shift"))
+        self.btn_DataClear.setText(_translate("MainWindow", "Data Clear"))
